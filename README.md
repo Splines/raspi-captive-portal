@@ -2,7 +2,7 @@
   <img src="https://user-images.githubusercontent.com/37160523/164785388-abe36954-6b33-4b1d-a001-46072f68cb99.svg" width="1000px" />
   
   <h3 align="center">Raspi Captive Portal</h3>
-  <p align="center">A captive portal & access point setup for the raspberry pi</p>
+  <p align="center">A Captive Portal & Access Point setup for use with the Raspberry Pi</p>
 </p>
 
 
@@ -10,13 +10,14 @@
 
 Ever connected to a WiFi network in public space? You've probably been redirected to a page where you had to agree to the terms of use to gain access to the Internet. This web page is called *Captive Portal*.
 
-This [Raspi documentation](https://www.raspberrypi.com/documentation/computers/configuration.html#setting-up-a-routed-wireless-access-point) offers a starting point to set this up yourself. However, it's tedious. And it's a lot of digging through documentation to figure out how to populate those config files properly. And then things don't work as expected and suddenly you've spent another three hours trying to get a basic access point to run.
+[This Raspi documentation](https://www.raspberrypi.com/documentation/computers/configuration.html#setting-up-a-routed-wireless-access-point) offers a starting point to set up a captive portal on your own. However, it's tedious. And it's a lot of digging through documentation to figure out how to populate those config files properly. And then things don't work as expected and suddenly you've spent another three hours (more!) trying to get a basic access point to run. Why not make your life easier?
 
-Why not make your life easier?
+| :star:   | If this project indeed made your life easier, consider giving a GitHub star. |
+|---------------|:-------------------------|
 
 ## What you get
 
-**This repo offers you a complete setup for an access point with a captive portal, but without Internet access.** Instead, you can serve a static HTML page to people connecting to your WiFi network. See my project [`raspi-captive-circle`](https://github.com/Splines/raspi-captive-circle) as a full project example where users can even play a game in a captive portal together.
+**This repo offers you a complete setup for an access point with a captive portal, but without Internet access.** Instead, you can serve a static HTML page to people connecting to your WiFi network. See my project [`raspi-captive-circle`](https://github.com/Splines/raspi-captive-circle) as a full project example where users can play a game in a captive portal together.
 
 You probably want to use this repo in one of these ways:
 
@@ -30,7 +31,7 @@ You probably want to use this repo in one of these ways:
 
   If you connect to the Raspberry Pi from remote, make sure to do so via Ethernet an NOT via WiFi as the setup script will create its own WiFi network and thus you won't be connected anymore (and maybe even lock yourself out of your Raspi). Python is installed by default on a Raspberry Pi, so clone this repository and execute the script via:
 
-  <sub>Note that the script needs to run as sudo user. Make sure that you agree with the commands executed beforehand by looking into the `.sh` scripts in the folder `access-point`. Setup script tested with a fresh install of Raspbian GNU/Linux 11 (bullseye) on the Raspberry Pi 4.</sub>
+  <sub>Note that the script needs to run as sudo user. Make sure that you agree with the commands executed beforehand by looking into the `.sh` scripts in the folder `access-point/`. Setup script was tested with a fresh install of Raspbian GNU/Linux 11 (bullseye) on the Raspberry Pi 4.</sub>
 
   ```
   git clone https://github.com/Splines/raspi-captive-portal.git
@@ -43,7 +44,7 @@ You probably want to use this repo in one of these ways:
 <details>
   <summary><strong>Connection</strong></summary>
 
-  After the installation, you should be able to connect to the new WiFi network called `Splines Raspi AP` using the password `splines-raspi`. You should be redirected to a static welcome page. If you open a "normal" browser, type in any http URL (https not working!) and you should also get redirected to the static page. The URL is supposed to read `splines.portal`.
+  After the installation, you should be able to connect to the new WiFi network called `Splines Raspi AP` using the password `splines-raspi`. You should be redirected to a static welcome page. If you open a "normal" browser, type in any http URL (http**s** URLs are not working) and you should also get redirected to the static page. The URL is supposed to read `splines.portal`.
 
 </details>
 
@@ -63,6 +64,8 @@ You probably want to use this repo in one of these ways:
 </details>
 
 
+## Other
+
 <details>
   <summary><strong>Dependencies</strong></summary>
 
@@ -71,14 +74,12 @@ You probably want to use this repo in one of these ways:
   *Captive Portal*
   - `hostapd`: Access Point (AP)
   - `dnsmasq`: Provide DHCP server (automatically assign IP addresses to clients) and DNS server (name resolution)
-  - `netfilter-persistent` & `iptables-persistent`: save firewall rules and restore them when the Raspberry Pi boots
+  - `netfilter-persistent` & `iptables-persistent`: Save firewall rules and restore them when the Raspberry Pi boots
 
   *Node.js Server*
   - `express` 
 
 </details>
-
-## Other
 
 <details>
     <summary><strong>License</strong></summary>
