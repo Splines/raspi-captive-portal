@@ -68,16 +68,27 @@ You probably want to use this repo in one of these ways:
 
   These are the principal dependencies used in this project:
 
-  Captive Portal
+  *Captive Portal*
   - `hostapd`: Access Point (AP)
   - `dnsmasq`: Provide DHCP server (automatically assign IP addresses to clients) and DNS server (name resolution)
   - `netfilter-persistent` & `iptables-persistent`: save firewall rules and restore them when the Raspberry Pi boots
 
-  Node.js Server
+  *Node.js Server*
   - `express` 
 
 </details>
 
 ## Other
 
-Todo
+<details>
+    <summary><strong>License</strong></summary>
+
+This program is licensed with the very permissive MIT license, see the [LICENSE file](https://github.com/Splines/raspi-captive-portal/blob/main/LICENSE) for details. As this is only a small project, I don't require you to include the license header in every source file, however you must include it at the root of your project. According to the MIT license you must also include a copyright notice, that is, link back to this project, e.g. in this way:
+
+> [Captive Portal & Access Point setup](https://github.com/Splines/raspi-captive-portal) - Copyright (c) 2022 Splines
+
+Any questions regarding the license? [This FAQ](https://www.tawesoft.co.uk/kb/article/mit-license-faq) might help.
+
+The logo of this project is exempt from the MIT license and you must not use it in any of your work. Icons used in the logo are bought from thenounproject.com ([1](https://thenounproject.com/icon/raspberry-pi-1109535/) and [2](https://thenounproject.com/icon/wifi-170991/)).
+
+</details>
