@@ -1,6 +1,12 @@
-TODO image
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/37160523/164785388-abe36954-6b33-4b1d-a001-46072f68cb99.svg" width="1000px" />
+  
+  <h3 align="center">Raspi Captive Portal</h3>
+  <p align="center">A captive portal & access point setup for the raspberry pi</p>
+</p>
 
-**Moviation**
+
+## Motivation
 
 Ever connected to a WiFi network in public space? You've probably been redirected to a page where you had to agree to the terms of use to gain access to the Internet. This web page is called *Captive Portal*.
 
@@ -8,7 +14,7 @@ This [Raspi documentation](https://www.raspberrypi.com/documentation/computers/c
 
 Why not make your life easier?
 
-**What you get**
+## What you get
 
 **This repo offers you a complete setup for an access point with a captive portal, but without Internet access.** Instead, you can serve a static HTML page to people connecting to your WiFi network. See my project [`raspi-captive-circle`](https://github.com/Splines/raspi-captive-circle) as a full project example where users can even play a game in a captive portal together.
 
@@ -16,6 +22,8 @@ You probably want to use this repo in one of these ways:
 
 - As a starting point for your own project using an access point and/or captive portal. See the installation instructions in this case.
 - As a resource to get inspired by and to consult if you are stuck. The code contains links to other useful resources like package documentations, stack overflow questions etc.
+
+## Setup
 
 <details>
   <summary><strong>Installation</strong></summary>
@@ -70,4 +78,6 @@ You probably want to use this repo in one of these ways:
 
 </details>
 
+## Other
 
+Todo
