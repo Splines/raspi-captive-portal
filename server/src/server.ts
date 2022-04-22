@@ -9,7 +9,6 @@ const HOST_NAME = 'splines.portal';
 const FRONTEND_FOLDER = path.join(__dirname, '../', 'public');
 
 const app = express();
-app.use(express.static(FRONTEND_FOLDER));
 
 // Redirect every request to our application
 // https://raspberrypi.stackexchange.com/a/100118
@@ -23,6 +22,9 @@ app.use((req: Request, res: Response, next: NextFunction) => {
     }
     next();
 });
+
+// Call this AFTER app.use where we do the redirects
+app.use(express.static(FRONTEND_FOLDER));
 
 
 /////////////////////////////// Endpoints //////////////////////////////////////
