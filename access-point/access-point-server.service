@@ -1,9 +1,9 @@
 [Unit]
-Description=Pi WiFi Server Service
+Description=Raspi Access Point Server Service
 After=network.target
 
 [Service]
-WorkingDirectory=/path/to/backend/will/be/replaced/via/python/script
+WorkingDirectory=/home/domin/Desktop/dev/new/raspi-captive-portal/server
 ExecStart=/usr/bin/npm start
 Restart=on-failure
 RestartSec=10

@@ -75,7 +75,7 @@ def setup_access_point():
 
     print('We will now set up the Raspi as Access Point to connect to via WiFi.')
     print('The following commands will execute as sudo user.')
-    print('Please make sure you look through the file "./access-point/setup-access-point.sh')
+    print('Please make sure you look through the file "./access-point/setup-access-point.sh"')
     print('first before approving.')
     answer = query_yes_no('Continue?', default='yes')
 
@@ -119,7 +119,7 @@ def setup_server_service():
     print('We will now register the Node.js app as a Linux service and configure')
     print('it to start at boot time.')
     print('The following commands will execute as sudo user.')
-    print('Please make sure you look through the file "./access-point/setup-server.sh')
+    print('Please make sure you look through the file "./access-point/setup-server.sh"')
     print('first before approving.')
     answer = query_yes_no('Continue?', default='yes')
 
