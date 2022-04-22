@@ -1,0 +1,13 @@
+[Unit]
+Description=Pi WiFi Server Service
+After=network.target
+
+[Service]
+WorkingDirectory=/path/to/backend/will/be/replaced/via/python/script
+ExecStart=/usr/bin/npm start
+Restart=on-failure
+RestartSec=10
+Environment=PORT=3000
+
+[Install]
+WantedBy=multi-user.target
