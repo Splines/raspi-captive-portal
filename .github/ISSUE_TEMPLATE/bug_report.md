@@ -23,4 +23,4 @@ assignees: Splines
 <!-- A clear and concise description of what you expected to happen. The more concise, the less we have to play question-answer-ping-pong. -->
 
 **System**
-<!-- Make sure to include version information about your system environment. e.g. your Raspberry Pi distribution and version, your browser version and OS from which you try to access the WiFi network.-->
+<!-- Make sure to include version information about your system environment, e.g. your Raspberry Pi distribution and version, your browser version and OS from which you try to access the WiFi network.-->
