@@ -21,7 +21,7 @@ Ever connected to a WiFi network in public space? You've probably been redirecte
 
 You probably want to use this repo in one of these ways:
 
-- As a starting point for your own project using an access point and/or captive portal. See the installation instructions in this case.
+- As a starting point for your own project using an access point and/or captive portal. See the installation instructions in this case. Check out my [medium post](https://dominicplein.medium.com/captive-portal-access-point-on-the-raspberry-pi-easy-setup-28a9bf72e998) to get some ideas for a project.
 - As a resource to get inspired by and to consult if you are stuck. The code contains links to other useful resources like package documentations, stack overflow questions etc.
 
 ## Setup
