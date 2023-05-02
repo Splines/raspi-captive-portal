@@ -120,6 +120,7 @@ sudo systemctl restart access-point-server
 
 <details>
   <summary><strong>Dependencies</strong></summary>
+  This project was developed and tested on the Raspberry Pi 4, Raspbian GNU/Linux 11 (bullseye). Meanwhile, some setup configs might have changed. Feel free to open a pull request with updated config files.
 
   These are the principal dependencies used in this project:
 
