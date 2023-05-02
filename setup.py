@@ -164,4 +164,5 @@ def all():
     done()
 
 
-all()
+if __name__ == "__main__":
+    all()
