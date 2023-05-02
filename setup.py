@@ -54,14 +54,14 @@ def install_node():
         majorVersion = data["node"].split('.')[0]
         if (int(majorVersion) < 16):
             answer = query_yes_no(
-                'Would you still like to try installing Node.js v16.x (LTS)?', default='yes')
+                'Would you still like to try installing Node.js v18.x (LTS)?', default='yes')
             installed = not answer
 
     # Install
     if not installed:
         # https://github.com/nodesource/distributions/blob/master/README.md#installation-instructions
         subprocess.run(
-            'curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo bash -', shell=True)
+            'curl -fsSL https://deb.nodesource.com/setup_18.x | sudo bash -', shell=True)
         subprocess.run('sudo apt-get install -y nodejs', shell=True)
 
         # npm might not be installed alongside Node.js
