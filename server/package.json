@@ -4,20 +4,20 @@
   "author": "Splines",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.17.3"
+    "express": "^4.18.2"
   },
   "devDependencies": {
-    "@types/express": "^4.17.13",
-    "@types/node": "^16.11.6",
-    "kill-port": "^1.6.1",
-    "nodemon": "^2.0.20",
-    "rimraf": "^3.0.2",
-    "ts-node": "^10.7.0",
-    "typescript": "^4.4.4"
+    "@types/express": "^4.17.17",
+    "@types/node": "^18.16.3",
+    "kill-port": "^2.0.1",
+    "nodemon": "^2.0.22",
+    "rimraf": "^5.0.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.4"
   },
   "scripts": {
     "dev": "nodemon",
-    "dev-once": "kill-port 3000 && node -r ts-node/register src/server/server.ts",
+    "dev-once": "kill-port 3000 && node -r ts-node/register src/server.ts",
     "build": "rimraf ./build && tsc",
     "start": "node build/server.js",
     "build-start": "npm run build && npm run start",
