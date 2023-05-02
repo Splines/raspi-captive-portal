@@ -79,7 +79,7 @@ def setup_access_point():
     print('first before approving.')
     answer = query_yes_no('Continue?', default='yes')
 
-    if (not answer):
+    if not answer:
         return sys.exit(0)
 
     subprocess.run(
