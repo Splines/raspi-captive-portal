@@ -1,4 +1,4 @@
-const p = document.getElementById('api-endpoint-test');
+const endpointTestParagraph = document.getElementById('api-endpoint-test');
 
 // Try out axios as library, way easier than using the native fetch API
 fetch('/api/ping')
@@ -14,6 +14,6 @@ fetch('/api/ping')
         });
     })
     .catch(err => {
-        p.innerText = err;
+        endpointTestParagraph.innerText = err;
         console.error(err);
     });
