@@ -3,6 +3,7 @@
   
   <h3 align="center">Raspi Captive Portal</h3>
   <p align="center">A Captive Portal & Access Point setup for use with the Raspberry Pi</p>
+  <p align="center"><sub>Tested on the Raspberry Pi 4, Raspbian GNU/Linux 11 (bullseye)</sub></p>
 </p>
 
 
@@ -137,7 +138,7 @@ sudo systemctl restart access-point-server
 
 This program is licensed with the very permissive MIT license, see the [LICENSE file](https://github.com/Splines/raspi-captive-portal/blob/main/LICENSE) for details. As this is only a small project, I don't require you to include the license header in every source file, however you must include it at the root of your project. According to the MIT license you must also include a copyright notice, that is, link back to this project, e.g. in this way:
 
-> [Captive Portal & Access Point setup](https://github.com/Splines/raspi-captive-portal) - Copyright (c) 2022 Splines
+> [Captive Portal & Access Point setup](https://github.com/Splines/raspi-captive-portal) - Copyright (c) 2022-23 Splines
 
 Any questions regarding the license? [This FAQ](https://www.tawesoft.co.uk/kb/article/mit-license-faq) might help.
 
