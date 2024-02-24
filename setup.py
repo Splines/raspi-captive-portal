@@ -62,7 +62,9 @@ def install_node():
     if not installed:
         # https://github.com/nodesource/distributions/blob/master/README.md#installation-instructions
         subprocess.run(
-            "curl -fsSL https://deb.nodesource.com/setup_18.x | sudo bash -", shell=True, check=True
+            "curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -",
+            shell=True,
+            check=True,
         )
         subprocess.run("sudo apt-get install -y nodejs", shell=True, check=True)
 
