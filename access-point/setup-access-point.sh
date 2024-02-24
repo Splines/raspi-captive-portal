@@ -6,6 +6,10 @@
 
 # --- Install
 sudo apt-get update
+# dhcpcd is a DHCP client. It should come pre-installed by default, but that
+# was not the case for me when installing the new Bookworm Raspi OS. That's
+# why we play it safe and install it here (again).
+sudo apt-get install -y dhcpcd
 # HostAPD access point software and DNS/DHCP via DNSMasq
 sudo apt-get install -y dnsmasq
 sudo apt-get install -y hostapd
