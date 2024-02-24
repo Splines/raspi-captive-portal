@@ -1,6 +1,7 @@
 const endpointTestParagraph = document.getElementById('api-endpoint-test');
 
-// Try out axios as library, way easier than using the native fetch API
+// I recommend to try out axios as library, which is easier to use
+// than the native fetch API we're using here.
 fetch('/api/ping')
     .then(res => {
         if (!res.ok) {
@@ -9,7 +10,7 @@ fetch('/api/ping')
             throw err;
         }
         res.text().then(text => {
-            p.innerText = text;
+            endpointTestParagraph.innerText = text;
             console.log(`got data: ${text}`);
         });
     })

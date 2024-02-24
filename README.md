@@ -3,7 +3,7 @@
   
   <h3 align="center">Raspi Captive Portal</h3>
   <p align="center">A Captive Portal & Access Point setup for use with the Raspberry Pi</p>
-  <p align="center"><sub>Tested on the Raspberry Pi 4, Raspbian GNU/Linux 11 (bullseye)</sub></p>
+  <p align="center">Tested on the Raspberry Pi 4, Raspberry Pi OS: Bullseye (11) & Bookworm (12) (64-bit)</p>
 </p>
 
 
@@ -27,12 +27,15 @@ You probably want to use this repo in one of these ways:
 
 ## Setup
 
+> [!tip]
+> Raspberry Pi OS Bookworm (12) comes with a new [Network Manager](https://www.raspberrypi.com/documentation/computers/configuration.html#configuring-networking). It might make the configuration easier instead of manually having to setup `dhcp`, `hostapd` etc. (the latter is what we do in this project, but automatically for you). Nevertheless, this project still works on Bookworm 😊
+
 <details>
   <summary><strong>Installation</strong></summary>
 
   If you connect to the Raspberry Pi from remote, make sure to do so via Ethernet an NOT via WiFi as the setup script will create its own WiFi network and thus you won't be connected anymore (and maybe even lock yourself out of your Raspi). Python is installed by default on a Raspberry Pi, so clone this repository and execute the script via:
 
-  <sub>Note that the script needs to run as sudo user. Make sure that you agree with the commands executed beforehand by looking into the `.sh` scripts in the folder `access-point/`. Setup script was tested with a fresh install of Raspbian GNU/Linux 11 (bullseye) on the Raspberry Pi 4.</sub>
+  <sub>Note that the script needs to run as sudo user. Make sure that you agree with the commands executed beforehand by looking into the `.sh` scripts in the folder `access-point/`.</sub>
 
   ```
   git clone https://github.com/Splines/raspi-captive-portal.git
@@ -45,7 +48,7 @@ You probably want to use this repo in one of these ways:
 <details>
   <summary><strong>Connection</strong></summary>
 
-  After the installation, you should be able to connect to the new WiFi network called `Splines Raspi AP` using the password `splines-raspi`. You should be redirected to a static welcome page. If you open a "normal" browser, type in any http URL (http**s** URLs are not working) and you should also get redirected to the static page. The URL is supposed to read `splines.portal`.
+  After the installation, you should be able to connect to the new WiFi network called `Splines Raspi AP` using the password `splinesraspi`. You should be redirected to a static welcome page. If you open a "normal" browser, type in any http URL (http**s** URLs are not working) and you should also get redirected to the static page. The URL is supposed to read `splines.portal` (but visiting any URL should redirect there). From here on you can build your custom captive portal webpage by customizing the code in the `server` folder of this project.
 
 </details>
 
@@ -59,7 +62,7 @@ You probably want to use this repo in one of these ways:
 
   - static ip for the raspi: `192.168.4.1/24`
   - using `wlan0` as interface
-  - WiFi: SSID: `Splines Raspi AP`, password: `splines-raspi`, country code: `DE` (change if you are not living in Germany)
+  - WiFi: SSID: `Splines Raspi AP`, password: `splinesraspi`, country code: `DE` (change if you are not living in Germany)
   - Server: port: `3000` (all request on port 80 (http) get redirected to this port), host name: `splines.portal`
 
 </details>
@@ -72,7 +75,7 @@ If this first assistance does not help, feel free to open a new issue.
 
 **I can't connect to the `Splines Raspi AP` WiFi or get thrown out**
 
-Double check that you've entered the correct password: `splines-raspi`. Also, the Raspberry Pi won't provide Internet acceess to you, it will just serve a static HTML page for the game. This is why you might get thrown out of the WiFi network. If this is the case, there is usually an option to "Use this network without Internet access" (or the like). It might also help to disable mobile data.
+Double check that you've entered the correct password: `splinesraspi`. Also, the Raspberry Pi won't provide Internet access to you, it will just serve a static HTML page as captive portal. This is why you might get thrown out of the WiFi network. If this is the case, there is usually an option to "Use this network without Internet access" (or the like). It might also help to disable mobile data.
 
 **How can I use a "normal" browser when I have to click "Cancel" in the captive portal?**
 
@@ -120,13 +123,14 @@ sudo systemctl restart access-point-server
 
 <details>
   <summary><strong>Dependencies</strong></summary>
-  This project was developed and tested on the Raspberry Pi 4, Raspbian GNU/Linux 11 (bullseye). Meanwhile, some setup configs might have changed. Feel free to open a pull request with updated config files.
+  This project was developed and tested on the Raspberry Pi 4, Raspberry Pi OS: Bullseye (11) & Bookworm (12) (64-bit).
 
   These are the principal dependencies used in this project:
 
   *Captive Portal*
+  - `dhcpcd`:  DHCP server (automatically assign IP addresses to clients)
   - `hostapd`: Access Point (AP)
-  - `dnsmasq`: Provide DHCP server (automatically assign IP addresses to clients) and DNS server (name resolution)
+  - `dnsmasq`: DNS server (name resolution)
   - `netfilter-persistent` & `iptables-persistent`: Save firewall rules and restore them when the Raspberry Pi boots
 
   *Node.js Server*
@@ -137,12 +141,12 @@ sudo systemctl restart access-point-server
 <details>
     <summary><strong>License</strong></summary>
 
-This program is licensed with the very permissive MIT license, see the [LICENSE file](https://github.com/Splines/raspi-captive-portal/blob/main/LICENSE) for details. As this is only a small project, I don't require you to include the license header in every source file, however you must include it at the root of your project. According to the MIT license you must also include a copyright notice, that is, link back to this project, e.g. in this way:
+This program is licensed with the very permissive MIT license, see the [LICENSE file](https://github.com/Splines/raspi-captive-portal/blob/main/LICENSE) for details. As this is only a small project, I don't require you to include the license header in every source file. However, you must include a copyright notice in your project, that is, link back to this project, e.g. in this way:
 
-> [Captive Portal & Access Point setup](https://github.com/Splines/raspi-captive-portal) - Copyright (c) 2022-23 Splines
+> [Captive Portal & Access Point setup](https://github.com/Splines/raspi-captive-portal) - Copyright (c) 2022-2024 Splines
 
 Any questions regarding the license? [This FAQ](https://www.tawesoft.co.uk/kb/article/mit-license-faq) might help.
 
-The logo of this project is exempt from the MIT license and you must not use it in any of your work. Icons used in the logo are bought from thenounproject.com ([1](https://thenounproject.com/icon/raspberry-pi-1109535/) and [2](https://thenounproject.com/icon/wifi-170991/)).
+The logo of this project is exempt from the MIT license and you must *not* use it in any of your work. Icons used in the logo are bought from thenounproject.com ([1](https://thenounproject.com/icon/raspberry-pi-1109535/) and [2](https://thenounproject.com/icon/wifi-170991/)).
 
 </details>

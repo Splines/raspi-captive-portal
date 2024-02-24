@@ -1,0 +1,16 @@
+# This is NOT published as PyPI package. We just use this file to declare
+# some formatting/linting rules.
+
+[tool.pylint."messages control"]
+disable = [
+    "missing-module-docstring",
+    "missing-function-docstring",
+    "missing-class-docstring",
+]
+
+[tool.pylint.format]
+max-line-length = 100
+max-module-lines = 500
+
+[tool.black]
+line-length = 100

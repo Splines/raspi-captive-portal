@@ -5,12 +5,16 @@
 # https://github.com/TomHumphries/RaspberryPiHotspot
 
 # --- Install
-sudo apt update
+sudo apt-get update
+# dhcpcd is a DHCP client. It should come pre-installed by default, but that
+# was not the case for me when installing the new Bookworm Raspi OS. That's
+# why we play it safe and install it here (again).
+sudo apt-get install -y dhcpcd
 # HostAPD access point software and DNS/DHCP via DNSMasq
-sudo apt install -y dnsmasq
-sudo apt install -y hostapd
+sudo apt-get install -y dnsmasq
+sudo apt-get install -y hostapd
 # Utility to save firewall rules and restoring them when the Pi boots
-sudo DEBIAN_FRONTEND=noninteractive apt install -y netfilter-persistent iptables-persistent
+sudo DEBIAN_FRONTEND=noninteractive apt-get install -y netfilter-persistent iptables-persistent
 
 # Stop services since configuration files are not ready yet
 sudo systemctl stop dnsmasq
