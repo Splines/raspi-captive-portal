@@ -1,0 +1,7 @@
+{
+    "recommendations": [
+        "streetsidesoftware.code-spell-checker",
+        "ms-python.pylint",
+        "ms-python.black-formatter"
+    ]
+}
