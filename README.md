@@ -45,7 +45,7 @@ You probably want to use this repo in one of these ways:
 <details>
   <summary><strong>Connection</strong></summary>
 
-  After the installation, you should be able to connect to the new WiFi network called `Splines Raspi AP` using the password `splines-raspi`. You should be redirected to a static welcome page. If you open a "normal" browser, type in any http URL (http**s** URLs are not working) and you should also get redirected to the static page. The URL is supposed to read `splines.portal`.
+  After the installation, you should be able to connect to the new WiFi network called `Splines Raspi AP` using the password `splinesraspi`. You should be redirected to a static welcome page. If you open a "normal" browser, type in any http URL (http**s** URLs are not working) and you should also get redirected to the static page. The URL is supposed to read `splines.portal`.
 
 </details>
 
@@ -59,7 +59,7 @@ You probably want to use this repo in one of these ways:
 
   - static ip for the raspi: `192.168.4.1/24`
   - using `wlan0` as interface
-  - WiFi: SSID: `Splines Raspi AP`, password: `splines-raspi`, country code: `DE` (change if you are not living in Germany)
+  - WiFi: SSID: `Splines Raspi AP`, password: `splinesraspi`, country code: `DE` (change if you are not living in Germany)
   - Server: port: `3000` (all request on port 80 (http) get redirected to this port), host name: `splines.portal`
 
 </details>
@@ -72,7 +72,7 @@ If this first assistance does not help, feel free to open a new issue.
 
 **I can't connect to the `Splines Raspi AP` WiFi or get thrown out**
 
-Double check that you've entered the correct password: `splines-raspi`. Also, the Raspberry Pi won't provide Internet acceess to you, it will just serve a static HTML page for the game. This is why you might get thrown out of the WiFi network. If this is the case, there is usually an option to "Use this network without Internet access" (or the like). It might also help to disable mobile data.
+Double check that you've entered the correct password: `splinesraspi`. Also, the Raspberry Pi won't provide Internet acceess to you, it will just serve a static HTML page for the game. This is why you might get thrown out of the WiFi network. If this is the case, there is usually an option to "Use this network without Internet access" (or the like). It might also help to disable mobile data.
 
 **How can I use a "normal" browser when I have to click "Cancel" in the captive portal?**
 
