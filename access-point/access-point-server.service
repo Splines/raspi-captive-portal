@@ -3,7 +3,7 @@ Description=Raspi Access Point Server Service
 After=network.target
 
 [Service]
-WorkingDirectory=/home/domin/Desktop/dev/new/raspi-captive-portal/server
+WorkingDirectory=/this/path/will/be/replaced
 ExecStart=/usr/bin/npm start
 Restart=on-failure
 RestartSec=10
