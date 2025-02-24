@@ -1,6 +1,6 @@
 {
   "name": "raspi-captive-portal-backend",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "author": "Splines",
   "license": "MIT",
   "dependencies": {
