@@ -56,13 +56,14 @@ You probably want to use this repo in one of these ways:
 <details>
   <summary><strong>Customization</strong></summary>
 
-  To customize the WiFi SSID, password and the like, simply change the respective key-value pairs in the config files inside the folder `access-point/`. Adjust server settings in the file `server/src/server.ts`.
+  To customize the WiFi SSID, password and the like, simply change the respective key-value pairs in the config files inside the folder `access-point/`. Then launch the setup script again to apply the changes (`sudo python setup.py`). Furthermore, you can adjust server settings in the file `server/src/server.ts`.
 
   Some default values:
 
   - static ip for the raspi: `192.168.4.1/24`
   - using `wlan0` as interface
-  - WiFi: SSID: `Splines Raspi AP`, password: `splinesraspi`, country code: `DE` (change if you are not living in Germany)
+  - WiFi: SSID: `Splines Raspi AP`, password: `splinesraspi`,
+    <br>country code: `DE` (change if you are not in Germany)
   - Server: port: `3000` (all request on port 80 (http) get redirected to this port), host name: `splines.portal`
 
 </details>
@@ -73,45 +74,47 @@ You probably want to use this repo in one of these ways:
 
 If this first assistance does not help, feel free to open a new issue.
 
-**I can't connect to the `Splines Raspi AP` WiFi or get thrown out**
+🎈 **I can't connect to the `Splines Raspi AP` WiFi or get thrown out**
 
 Double check that you've entered the correct password: `splinesraspi`. Also, the Raspberry Pi won't provide Internet access to you, it will just serve a static HTML page as captive portal. This is why you might get thrown out of the WiFi network. If this is the case, there is usually an option to "Use this network without Internet access" (or the like). It might also help to disable mobile data.
 
-**How can I use a "normal" browser when I have to click "Cancel" in the captive portal?**
+🎈 **How can I use a "normal" browser when I have to click "Cancel" in the captive portal?**
 
-The Raspberry Pi serves as Access Point and does not provide Internet access to you. Therefore on the captive portal you might have to click "cancel" (e.g. on iOS) and then "Use this network without Internet access" (or the like). After that, you can open any "real" browser on your phone, e.g. Chrome, Firefox, Safari (and so forth), and go to the website `splines.portal`.
+The Raspberry Pi serves as Access Point and does not provide Internet access to you. Therefore on the captive portal you might have to click "cancel" (e.g. on iOS) and then "Use this network without Internet access" (or the like). After that, you can open any "real" browser on your phone, e.g. Chrome, Firefox, Safari (and so forth), and go to the website `splines.portal` (any other website should redirect you to this page).
 
-**I don't see the `Splines Raspi AP` WiFi network**
+🎈 **I don't see the `Splines Raspi AP` WiFi network**
 
-Make sure that everything worked fine in the installation script. Check the output of hostapd (host access point daemon), has it started correctly?
+Make sure that everything worked fine in the installation script. Check the output of hostapd (host access point daemon); has it started correctly?
 
-```
+```bash
 sudo systemctl status hostapd
 ```
 
 If it failed try to restart it:
 
-```
+```bash
 sudo systemctl restart hostapd
 ```
 
-If this also fails, try to reboot the Raspberry Pi and check again:
+If this fails, make sure that [`./access-point/hostapd.conf`](./access-point/hostapd.conf) has the correct country code set for the country you are located in. If you modify this, you have to run the setup script again afterwards (`sudo python setup.py`) (like for any modification of the config files of this project). If this does not help, you might have to set the country code manually by means of `sudo raspi-config`, see [issue #12](https://github.com/Splines/raspi-captive-portal/issues/12).
 
-```
+And last but not least, sometimes reboots work wonders:
+
+```bash
 sudo restart
 ```
 
-**I see the `Splines Raspi AP` WiFi network, but the web page doesn't show up**
+🎈 **I see the `Splines Raspi AP` WiFi network, but the web page doesn't show up**
 
 Access the URL `splines.portal` in your browser. Also make sure that the server serving the static HTML pages is up and running:
 
-```
+```bash
 sudo systemctl status access-point-server
 ```
 
 The output should contain this line: "⚡ Raspberry Pi Server listening on port 3000". Any error here? Try to restart the service:
 
-```
+```bash
 sudo systemctl restart access-point-server
 ```
 
