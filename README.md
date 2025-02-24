@@ -146,7 +146,7 @@ sudo systemctl restart access-point-server
 
 This program is licensed with the very permissive MIT license, see the [LICENSE file](https://github.com/Splines/raspi-captive-portal/blob/main/LICENSE) for details. As this is only a small project, I don't require you to include the license header in every source file. However, you must include a copyright notice in your project, that is, link back to this project, e.g. in this way:
 
-> [Captive Portal & Access Point setup](https://github.com/Splines/raspi-captive-portal) - Copyright (c) 2022-2024 Splines
+> [Captive Portal & Access Point setup](https://github.com/Splines/raspi-captive-portal) - Copyright (c) Splines
 
 Any questions regarding the license? [This FAQ](https://www.tawesoft.co.uk/kb/article/mit-license-faq) might help.
 
