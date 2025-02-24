@@ -96,14 +96,12 @@ If it failed try to restart it:
 sudo systemctl restart hostapd
 ```
 
-If this also fails, you might have to manually set the Wifi country code (see also [`./access-point/hostapd.conf`](./access-point/hostapd.conf) in this project) by means of `sudo raspi-config`, see [issue #12](https://github.com/Splines/raspi-captive-portal/issues/12).
+If this fails, make sure that [`./access-point/hostapd.conf`](./access-point/hostapd.conf) has the correct country code set for the country you are located in. If you modify this, you have to run the setup script again afterwards (`sudo python setup.py`) (like for any modification of the config files of this project). If this does not help, you might have to set the country code manually by means of `sudo raspi-config`, see [issue #12](https://github.com/Splines/raspi-captive-portal/issues/12).
 
-If in doubt, also try to reboot the Raspberry Pi and check again:
+And last but not least, sometimes reboots work wonders:
 
 ```bash
 sudo restart
-# after restart
-sudo systemctl status hostapd
 ```
 
 🎈 **I see the `Splines Raspi AP` WiFi network, but the web page doesn't show up**
