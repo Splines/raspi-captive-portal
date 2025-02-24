@@ -158,14 +158,14 @@ def done():
 
 def execute_all():
     print_header()
-    # check_super_user()
+    check_super_user()
 
     install_node()
-    # setup_access_point()
+    setup_access_point()
 
-    # install_server_dependencies()
-    # build_server()
-    # setup_server_service()
+    install_server_dependencies()
+    build_server()
+    setup_server_service()
 
     done()
 
