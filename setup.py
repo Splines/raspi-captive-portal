@@ -33,15 +33,19 @@ def check_super_user():
 
 
 def install_node():
+    NODE_JS_VERSION = 22  # EOL: October 2025 (https://nodejs.org/en/about/previous-releases)
+
+    def get_versions():
+        res = subprocess.run(["npm", "version", "--json"], capture_output=True, check=True)
+        return json.loads(res.stdout)
+
     print()
     ColorPrint.print(cyan, "▶ Node.js & npm")
 
     # Already installed?
-    installed = False
     data = {}
     try:
-        res = subprocess.run(["npm", "version", "--json"], capture_output=True, check=True)
-        data = json.loads(res.stdout)
+        data = get_versions()
         if data["npm"] and data["node"]:
             installed = True
     except Exception:  # pylint: disable=broad-except
@@ -51,26 +55,27 @@ def install_node():
         print(f'You have Node.js v{data["node"]} and npm v{data["npm"]} installed.')
 
         majorVersion = data["node"].split(".")[0]
-        if int(majorVersion) < 16:
+        if int(majorVersion) < NODE_JS_VERSION:
             answer = query_yes_no(
-                "Would you still like to try installing Node.js v18.x (LTS)?",
+                f"Would you still like to try installing Node.js v{NODE_JS_VERSION}.x (LTS)?",
                 default="yes",
             )
             installed = not answer
 
     # Install
     if not installed:
-        # https://github.com/nodesource/distributions/blob/master/README.md#installation-instructions
+        # https://nodejs.org/en/download
         subprocess.run(
-            "curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -",
+            "curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash",
             shell=True,
             check=True,
         )
-        subprocess.run("sudo apt-get install -y nodejs", shell=True, check=True)
-
-        # npm might not be installed alongside Node.js
-        # see: https://github.com/nodejs/help/issues/554#issuecomment-290041018
-        subprocess.run("sudo apt-get install npm", shell=True, check=True)
+        subprocess.run(
+            f". $HOME/.nvm/nvm.sh && nvm install {NODE_JS_VERSION}",
+            shell=True,
+            check=True,
+            executable="/bin/bash",
+        )
 
 
 def setup_access_point():
