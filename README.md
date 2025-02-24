@@ -56,13 +56,14 @@ You probably want to use this repo in one of these ways:
 <details>
   <summary><strong>Customization</strong></summary>
 
-  To customize the WiFi SSID, password and the like, simply change the respective key-value pairs in the config files inside the folder `access-point/`. Adjust server settings in the file `server/src/server.ts`.
+  To customize the WiFi SSID, password and the like, simply change the respective key-value pairs in the config files inside the folder `access-point/`. Then launch the setup script again to apply the changes (`sudo python setup.py`). Furthermore, you can adjust server settings in the file `server/src/server.ts`.
 
   Some default values:
 
   - static ip for the raspi: `192.168.4.1/24`
   - using `wlan0` as interface
-  - WiFi: SSID: `Splines Raspi AP`, password: `splinesraspi`, country code: `DE` (change if you are not living in Germany)
+  - WiFi: SSID: `Splines Raspi AP`, password: `splinesraspi`,
+    <br>country code: `DE` (change if you are not in Germany)
   - Server: port: `3000` (all request on port 80 (http) get redirected to this port), host name: `splines.portal`
 
 </details>
