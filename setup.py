@@ -66,12 +66,12 @@ def install_node():
     if not installed:
         # https://nodejs.org/en/download
         subprocess.run(
-            "curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash",
+            "curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | bash",
             shell=True,
             check=True,
         )
         subprocess.run(
-            f". $HOME/.nvm/nvm.sh && nvm install {NODE_JS_VERSION}",
+            f". $HOME/.nvm/nvm.sh && nvm install {NODE_JS_VERSION} && nvm install-latest-npm",
             shell=True,
             check=True,
             executable="/bin/bash",
